@@ -27,9 +27,9 @@ The dataset contains customer information, including churn status, services sign
 ### Task 4: Dataflow Job List with Details
  
 - Utilized Dataflow to build three job templates:
-  1. "text-files-from-gcs-to-pub-sub": To ingest data from GCS and publish it to the "telco-task" Pub/Sub topic.
-  2. "pub-sub-subscription-to-bigquery" (main data): To process data from "telco-task-sub" and load it into the "telcoTask-main" BigQuery table.
-  3. "pub-sub-subscription-to-bigquery" (backup data): To process data from "telco-task-backup" and load it into the "telcoTask-backup" BigQuery table.
+  1. `text-files-from-gcs-to-pub-sub` To ingest data from GCS and publish it to the "telco-task" Pub/Sub topic.
+  2. `pub-sub-subscription-to-bigquery` (main data): To process data from "telco-task-sub" and load it into the "telcoTask-main" BigQuery table.
+  3. `pub-sub-subscription-to-bigquery` (backup data): To process data from "telco-task-backup" and load it into the "telcoTask-backup" BigQuery table.
 - Due to limitations, the Dataflow jobs were run sequentially.
 
 ### Task 5: BigQuery Table with Ingested Data
@@ -42,8 +42,11 @@ The dataset contains customer information, including churn status, services sign
 
 ### Bonus Task: Help Data Analysts Generate Summary Tables
 
-- Created SQL queries to enable data analysts to generate one or more summary tables from the data.
-- Developed a "telcoTask-summary" table to store the results of the summary queries for easy access by data analysts.
+- For data transformation and summary table creation, the `bq2bq_summary.py` script from a previous project was employed.
+- This Python script performs essential data transformations and aggregations to extract meaningful insights from the dataset.
+- As a result, a "telcoTask-summary" table was established to store the outcomes of the summary queries.
+- Data analysts can now efficiently access and utilize this table to gain valuable insights from the data.
+
 ---
 ## Conclusion
 
