@@ -1,0 +1,7 @@
+sources:
+  - name: raw
+    schema: raw
+    description: Raw NYC Taxi Trip Dataset
+    tables:
+      - name: nyc_taxi_trip
+      - name: usd_idr

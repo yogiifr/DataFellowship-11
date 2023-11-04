@@ -1,0 +1,8 @@
+sources:
+  - name: cdm_nyc_taxi_trip
+    schema: nyc_taxi_trip_CDM
+    description: Intermediary Tables of NYC Taxi Trip Dataset
+    tables:
+      - name: int_nyc_taxi_trip
+      - name: int_storedtrip_nyc_taxi_trip
+      - name: int_notstoredtrip_nyc_taxi_trip

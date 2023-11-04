@@ -1,0 +1,166 @@
+version: 2
+
+models:
+  - name: int_nyc_taxi_trip
+    description: "Cleaned Intermediary layer of raw NYC taxi trip data"
+    columns:
+      - name: VendorID
+        description: |
+          A code indicating the TPEP provider that provided the record.
+          1= Creative Mobile Technologies, LLC; 2= VeriFone Inc.
+
+      - name: tpep_pickup_datetime
+        description: The date and time when the meter was engaged.
+
+      - name: tpep_dropoff_datetime
+        description: The date and time when the meter was disengaged.
+
+      - name: Passenger_count
+        description: The number of passengers in the vehicle. This is a driver-entered value.
+
+      - name: Trip_distance
+        description: The elapsed trip distance in miles reported by the taximeter.
+
+      - name: PULocationID
+        description: TLC Taxi Zone in which the taximeter was engaged.
+
+      - name: DOLocationID
+        description: TLC Taxi Zone in which the taximeter was disengaged.
+
+      - name: RateCodeID
+        description: |
+          The final rate code in effect at the end of the trip.
+          1= Standard rate
+          2= JFK
+          3= Newark
+          4= Nassau or Westchester
+          5= Negotiated fare
+          6= Group ride
+
+      - name: Store_and_fwd_flag
+        description: |
+          This flag indicates whether the trip record was held in vehicle memory before sending to the vendor,
+          aka “store and forward,” because the vehicle did not have a connection to the server.
+          Y= store and forward trip
+          N= not a store and forward trip
+
+      - name: Payment_type
+        description: |
+          A numeric code signifying how the passenger paid for the trip.
+          1= Credit card
+          2= Cash
+          3= No charge
+          4= Dispute
+          5= Unknown
+          6= Voided trip
+
+      - name: Fare_amount
+        description: The time-and-distance fare calculated by the meter.
+
+      - name: Extra
+        description: |
+          Miscellaneous extras and surcharges. Currently, this only includes the $0.50 and $1 rush hour and overnight charges.
+
+      - name: MTA_tax
+        description: $0.50 MTA tax that is automatically triggered based on the metered rate in use.
+
+      - name: Improvement_surcharge
+        description: $0.30 improvement surcharge assessed trips at the flag drop. The improvement surcharge began being levied in 2015.
+
+      - name: Tip_amount
+        description: Tip amount – This field is automatically populated for credit card tips. Cash tips are not included.
+
+      - name: Tolls_amount
+        description: Total amount of all tolls paid in the trip.
+
+      - name: Total_amount
+        description: The total amount charged to passengers. Does not include cash tips.
+
+      - name: Congestion_Surcharge
+        description: Total amount collected in the trip for NYS congestion surcharge.
+          
+  - name: int_usd_idr
+    description: "USD to IDR Exchange Rate Data"
+    columns:
+      - name: _Date_
+        description: "The date associated with the exchange rate. This is the date when the exchange rate was recorded."
+      - name: Price
+        description: "The exchange rate from USD to IDR on the given date. This represents the value of 1 USD in IDR on the recorded date."
+          
+  - name: int_idr_nyc_taxi_trip
+    description: "Cleaned Intermediary layer of raw NYC Taxi Trip data, with USD to IDR Conversion"
+    columns:
+      - name: VendorID
+        description: |
+          A code indicating the TPEP provider that provided the record.
+          1= Creative Mobile Technologies, LLC; 2= VeriFone Inc.
+
+      - name: tpep_pickup_datetime
+        description: The date and time when the meter was engaged.
+
+      - name: tpep_dropoff_datetime
+        description: The date and time when the meter was disengaged.
+
+      - name: Passenger_count
+        description: The number of passengers in the vehicle. This is a driver-entered value.
+
+      - name: Trip_distance
+        description: The elapsed trip distance in miles reported by the taximeter.
+
+      - name: PULocationID
+        description: TLC Taxi Zone in which the taximeter was engaged.
+
+      - name: DOLocationID
+        description: TLC Taxi Zone in which the taximeter was disengaged.
+
+      - name: RateCodeID
+        description: |
+          The final rate code in effect at the end of the trip.
+          1= Standard rate
+          2= JFK
+          3= Newark
+          4= Nassau or Westchester
+          5= Negotiated fare
+          6= Group ride
+
+      - name: Store_and_fwd_flag
+        description: |
+          This flag indicates whether the trip record was held in vehicle memory before sending to the vendor,
+          aka “store and forward,” because the vehicle did not have a connection to the server.
+          Y= store and forward trip
+          N= not a store and forward trip
+
+      - name: Payment_type
+        description: |
+          A numeric code signifying how the passenger paid for the trip.
+          1= Credit card
+          2= Cash
+          3= No charge
+          4= Dispute
+          5= Unknown
+          6= Voided trip
+
+      - name: fare_amount_in_idr
+        description: The time-and-distance fare calculated by the meter.
+
+      - name: extra_in_idr
+        description: |
+          Miscellaneous extras and surcharges. Currently, this only includes the $0.50 and $1 rush hour and overnight charges.
+
+      - name: mta_tax_in_idr
+        description: $0.50 MTA tax that is automatically triggered based on the metered rate in use.
+
+      - name: improvement_surcharge_in_idr
+        description: $0.30 improvement surcharge assessed trips at the flag drop. The improvement surcharge began being levied in 2015.
+
+      - name: tip_amount_in_idr
+        description: Tip amount – This field is automatically populated for credit card tips. Cash tips are not included.
+
+      - name: tolls_amount_in_idr
+        description: Total amount of all tolls paid in the trip.
+
+      - name: total_amount_in_idr
+        description: The total amount charged to passengers. Does not include cash tips.
+
+      - name: congestion_surcharge_in_idr
+        description: Total amount collected in the trip for NYS congestion surcharge.

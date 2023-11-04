@@ -1,0 +1,7 @@
+sources:
+  - name: ods_nyc_taxi_trip
+    schema: nyc_taxi_trip_ODS
+    description: Staging Tables of NYC Taxi Trip Dataset
+    tables:
+      - name: dataload_nyc_taxi_trip
+      - name: dataload_usd_idr

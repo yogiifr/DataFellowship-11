@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: monthly_total_passengers
+    description: "This model calculates the total number of passengers for each month using the NYC Taxi Trip data."
+    columns:
+      - name: month_name
+        description: "The name of the month when the trip occurred."
+      - name: total_passengers
+        description: "The total number of passengers for the corresponding month."
+        
+  - name: monthly_transactions_per_payment_type
+    description: "This model calculates the number of transactions per payment type each month using the NYC Taxi Trip data."
+    columns:
+      - name: month_name
+        description: "The name of the month when the transactions occurred."
+      - name: payment_type_name
+        description: "The name of the payment type used by passengers for the trip. Possible values are 'Credit card,' 'Cash,' 'No charge,' 'Dispute,' 'Unknown,' and 'Voided trip.'"
+      - name: transaction_count
+        description: "The count of transactions for a specific payment type in a particular month."
+
+  - name: monthly_trip_distance_per_rate_code
+    description: "This model calculates the total trip distance per rate code each month using the NYC Taxi Trip data."
+    columns:
+      - name: month_name
+        description: "The name of the month when the trip occurred."
+      - name: rate_code_name
+        description: "The description of the rate code."
+      - name: total_trip_distance
+        description: "The total trip distance in miles for the specified month and rate code."
